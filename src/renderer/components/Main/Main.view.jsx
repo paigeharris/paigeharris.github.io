@@ -21,11 +21,13 @@ import {
 } from 'mui-layout';
 import { Typography } from "@material-ui/core";
 import MainNav from "../MainNav";
+import MainToolbar from "../MainToolbar";
 
 const styles = (theme) => {
   return {
     root: {
       overflow: 'hidden'
+
     },
     content: {
       overflow: 'hidden',
@@ -40,8 +42,6 @@ const styles = (theme) => {
     },
     nav: {
       maxWidth: 200,
-      backgroundColor: 'yellow'
-
     },
     toggleButton: {
       backgroundColor: theme.palette.pink["500"],
@@ -93,10 +93,7 @@ class Main extends Component {
           }}
           renderMenuIcon={open => (open ? <ChevronLeft/> : <MenuRounded/>)}
         >
-          <DeveloperMode/>
-          <Typography>
-            Paige's Projects
-          </Typography>
+          <MainToolbar/>
         </Header>
         <Nav className={classes.nav}
              renderIcon={collapsed =>
