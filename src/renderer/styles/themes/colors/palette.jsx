@@ -6,6 +6,7 @@ import { background } from "./background";
 import { purple } from './purple';
 import { green } from './green';
 import { blue } from './blue';
+import { pink } from './pink';
 import { brown } from './brown';
 import { yellow } from './yellow';
 import { completed } from './completed';
@@ -25,6 +26,7 @@ export default {
   purple,
   green,
   blue,
+  pink,
   brown,
   yellow,
   completed,

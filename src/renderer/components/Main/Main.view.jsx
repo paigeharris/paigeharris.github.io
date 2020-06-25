@@ -14,10 +14,16 @@ import { Typography } from "@material-ui/core";
 const styles = (theme) => {
   return {
     root: {},
+    header: {
+      backgroundColor: theme.palette.pink["500"],
+      boxShadow: '0 2px 8px 0 rgba(0,0,0,0.12)',
+      borderColor: 'rgba(0,0,0,0.12)',
+      borderRadius: 3
+    },
     toggleButton: {
-      backgroundColor: theme.palette.blue["500"],
+      backgroundColor: theme.palette.pink["500"],
       '&:hover': {
-        backgroundColor: theme.palette.blue["900"]
+        backgroundColor: theme.palette.pink["900"]
       }
     }
   }
@@ -36,6 +42,9 @@ class Main extends Component {
     return (
       <Root config={config}>
         <Header
+          classes={{
+            root: classes.header
+          }}
           renderMenuIcon={open => (open ? <ChevronLeft/> : <MenuRounded/>)}
         >
           <Typography>
