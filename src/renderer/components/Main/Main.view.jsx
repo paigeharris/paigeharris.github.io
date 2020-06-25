@@ -5,7 +5,6 @@ import {
   ChevronLeft,
   ChevronRight,
   ContactMail,
-  DeveloperMode,
   EmojiPeople,
   Equalizer,
   Home,
