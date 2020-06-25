@@ -39,7 +39,7 @@ class Main extends Component {
           renderMenuIcon={open => (open ? <ChevronLeft/> : <MenuRounded/>)}
         >
           <Typography>
-            Header
+            Paige's Projects
           </Typography>
         </Header>
         <Nav
