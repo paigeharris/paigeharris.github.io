@@ -60,7 +60,7 @@ const theme = createMuiTheme({
       }
     },
     MuiTab: {
-      selected: {
+      "&$selected": {
         backgroundColor: palette.background.paper
       }
     },
