@@ -5,6 +5,7 @@ import {
   ChevronLeft,
   ChevronRight,
   ContactMail,
+  DeveloperMode,
   EmojiPeople,
   Equalizer,
   Home,
@@ -27,16 +28,24 @@ const styles = (theme) => {
       overflow: 'hidden'
     },
     content: {
-      overflow: 'hidden'
+      overflow: 'hidden',
+      width: 600
     },
     header: {
+      fontFamily: 'Marker Felt',
       backgroundColor: theme.palette.pink["500"],
       boxShadow: '0 2px 8px 0 rgba(0,0,0,0.12)',
       borderColor: 'rgba(0,0,0,0.12)',
       borderRadius: 3
     },
+    nav: {
+      maxWidth: 200,
+      backgroundColor: 'yellow'
+
+    },
     toggleButton: {
       backgroundColor: theme.palette.pink["500"],
+
       '&:hover': {
         backgroundColor: theme.palette.pink["900"]
       }
@@ -84,15 +93,16 @@ class Main extends Component {
           }}
           renderMenuIcon={open => (open ? <ChevronLeft/> : <MenuRounded/>)}
         >
+          <DeveloperMode/>
           <Typography>
             Paige's Projects
           </Typography>
         </Header>
-        <Nav
-          renderIcon={collapsed =>
+        <Nav className={classes.nav}
+             renderIcon={collapsed =>
             collapsed ? <ChevronRight/> : <ChevronLeft/>
           }
-          toggleProps={{
+             toggleProps={{
             classes: {
               root: classes.toggleButton
             }

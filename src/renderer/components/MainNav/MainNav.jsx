@@ -1,24 +1,28 @@
 import React, { Component } from 'react';
 import { withStyles } from "@material-ui/core/styles";
 import { List, ListItem, ListItemIcon } from "@material-ui/core";
-import { Home, AccountTree, Equalizer, EmojiPeople, ContactMail } from "@material-ui/icons";
-
 
 const styles = (theme) => {
     return {
       root: {
-        overflow: 'hidden'
+        overflow: 'hidden',
+        padding: 0
       },
       navItem: {
+        fontSize: '1.0rem',
+
         '&:hover': {
-          cursor: 'pointer'
+          cursor: 'pointer',
+          color: theme.palette.pink['600'],
+          backgroundColor: theme.palette.green['A700']
         }
       },
       navIcon: {
         display: 'block',
         color: theme.palette.pink['500'],
+
         '&:hover': {
-          color: theme.palette.pink['900']
+          color: theme.palette.pink['600']
         }
       },
       navIconPath: {

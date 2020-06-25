@@ -7,7 +7,7 @@ const theme = createMuiTheme({
   palette,
   typography: {
     useNextVariants: true,
-    fontFamily: '"Segoe UI Light", "Roboto", "Helvetica", "Arial", sans-serif',
+    fontFamily: 'Marker Felt, fantasy',
     fontSize: 14,
     color: palette.common.fontcolor,
     button: {
