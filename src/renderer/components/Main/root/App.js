@@ -9,7 +9,7 @@ const styles = (theme) => {
         background: theme.palette.pink["500"],
 
         '&:hover': {
-          background: theme.palette.pink["900"]
+          background: theme.palette.green['A700']
         }
       }
     }

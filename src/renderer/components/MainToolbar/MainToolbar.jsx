@@ -8,9 +8,13 @@ import Toolbar from "@material-ui/core/Toolbar";
 
 const styles = (theme) => {
   return {
-    root: {
-      overflow: 'hidden',
-      padding: 0
+    root: {},
+    siteButton: {
+      borderRadius: '10px',
+
+      '&:hover': {
+        color: theme.palette.pink['400']
+      }
     }
   }
 };
@@ -25,7 +29,9 @@ class MainToolbar extends Component {
     const { classes, tabs } = this.props;
     return (
       <Toolbar>
-        <IconButton edge="start" aria-label="menu">
+        <IconButton className={classes.siteButton}
+                    edge="start"
+                    aria-label="menu">
           <DeveloperMode/>
           <Typography>
             Paige's Projects
