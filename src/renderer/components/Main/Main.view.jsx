@@ -13,7 +13,13 @@ import { Typography } from "@material-ui/core";
 
 const styles = (theme) => {
   return {
-    root: {}
+    root: {},
+    toggleButton: {
+      backgroundColor: theme.palette.blue["500"],
+      '&:hover': {
+        backgroundColor: theme.palette.blue["900"]
+      }
+    }
   }
 };
 
@@ -40,6 +46,11 @@ class Main extends Component {
           renderIcon={collapsed =>
             collapsed ? <ChevronRight/> : <ChevronLeft/>
           }
+          toggleProps={{
+            classes: {
+              root: classes.toggleButton
+            }
+          }}
         >
           <Typography>
             Nav

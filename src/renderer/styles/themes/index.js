@@ -122,8 +122,11 @@ const theme = createMuiTheme({
         backgroundColor: palette.background.contentFrame
       }
     },
+    MuiButtonBase: {},
     MuiButton: {
-      root: {},
+      root: {
+        backgroundColor: palette.blue['500']
+      },
       outlined: {
         backgroundColor: palette.background.darkPaper
       },
