@@ -13,7 +13,7 @@ const styles = (theme) => {
 
         '&:hover': {
           cursor: 'pointer',
-          color: theme.palette.pink['600'],
+          color: theme.palette.pink['500'],
           backgroundColor: theme.palette.green['A700']
         }
       },
@@ -30,7 +30,11 @@ const styles = (theme) => {
         borderRadius: '30px',
         padding: '3px',
         width: '1.5em',
-        height: '1.5em'
+        height: '1.5em',
+
+        '&:hover': {
+          boxShadow: `1px 2px 8px 0 ${theme.palette.pink['900']}`
+        }
       }
     }
   }
