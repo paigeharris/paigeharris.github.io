@@ -26,7 +26,6 @@ const styles = (theme) => {
   return {
     root: {
       overflow: 'hidden'
-
     },
     content: {
       overflow: 'hidden',
@@ -40,7 +39,10 @@ const styles = (theme) => {
       borderRadius: 3
     },
     nav: {
-      maxWidth: 200,
+      '& div': {
+        maxWidth: 175,
+        overflow: 'visible'
+      }
     },
     toggleButton: {
       backgroundColor: theme.palette.pink["500"],
@@ -48,6 +50,15 @@ const styles = (theme) => {
       '&:hover': {
         backgroundColor: theme.palette.pink["900"]
       }
+    },
+    heard: {
+      padding: 8
+    },
+    dawg: {
+      width: '90%'
+    },
+    footer: {
+      border: 'none'
     }
   }
 };
@@ -107,24 +118,17 @@ class Main extends Component {
           <MainNav tabs={this.tabs}/>
         </Nav>
         <Content className={classes.content}>
-          <img src={'https://media.giphy.com/media/ayQ99hp01HFN6/source.gif'} alt={'Gif'}/>
-          <Typography color="textSecondary">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Nam
-            aliquam sem et tortor consequat id porta. Adipiscing commodo elit
-            at imperdiet. Lacus sed turpis tincidunt id aliquet risus feugiat
-            in ante. Cras tincidunt lobortis feugiat vivamus at augue eget
-            arcu. Hendrerit dolor magna eget est. Fames ac turpis egestas
-            maecenas. Cras semper auctor neque vitae tempus quam pellentesque.
-            Amet nisl purus in mollis nunc sed id semper. Molestie ac feugiat
-            sed lectus vestibulum mattis ullamcorper velit sed. Id aliquet
-            lectus proin nibh nisl condimentum.
+          <Typography className={classes.heard}
+                      variant={'h4'}
+          >
+            I heard you were looking for a developer..
           </Typography>
+          <img className={classes.dawg}
+               src={'https://media.giphy.com/media/ayQ99hp01HFN6/source.gif'}
+               alt={'Gif'}
+          />
         </Content>
-        <Footer>
-          <Typography>
-            Footer
-          </Typography>
+        <Footer className={classes.footer}>
         </Footer>
       </Root>
     )

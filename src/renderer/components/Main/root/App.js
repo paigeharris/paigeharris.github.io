@@ -5,6 +5,10 @@ import { withStyles } from "@material-ui/core";
 const styles = (theme) => {
   return {
     root: {
+      overflow: 'hidden',
+      height: '100vh',
+      width: '100vw',
+
       '& button': {
         background: theme.palette.pink["500"],
 
