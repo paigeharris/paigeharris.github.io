@@ -1,13 +1,8 @@
 //IMPORTANT: names starting with an underscore indicate ACTIONS calling BE
 
-/********* Layout ***************/
-export const WINDOW_MANAGER_WINDOW_CREATED = 'WINDOW_MANAGER_WINDOW_CREATED';
-export const WINDOW_MANAGER_TAB_ADD = 'WINDOW_MANAGER_TAB_ADD';
-export const WINDOW_MANAGER_ACTIVATE_TAB = 'WINDOW_MANAGER_ACTIVATE_TAB';
-export const WINDOW_MANAGER_REMOVE_TAB = 'WINDOW_MANAGER_REMOVE_TAB';
-export const WINDOW_MANAGER_UPDATE_TAB = 'WINDOW_MANAGER_UPDATE_TAB';
-export const UPDATE_SUBNAV = 'UPDATE_SUBNAV';
-export const APP_VERSION = 'APP_VERSION';
+/********* NEW *******************/
+export const SAY_HI = 'SAY_HI';
+export const SAY_BYE = 'SAY_BYE';
 
 /*** UTIL MESSAGES ***/
 export const APPLICATION_ERROR = 'APPLICATION_ERROR';

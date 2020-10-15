@@ -2,7 +2,11 @@ import { ORM } from 'redux-orm';
 import OpLogEntry from './models/OpLogEntry';
 import User from './models/User';
 
-const orm = new ORM();
+const orm = new ORM({
+  stateSelector: (state) => {
+    return state
+  }
+});
 
 export const models = [
   OpLogEntry,

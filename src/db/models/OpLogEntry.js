@@ -36,11 +36,6 @@ export default class OpLogEntry extends CrudModel {
 
   static reducer = createReducer({
     create: (payload, ConcreteModel, session) => {
-      if (payload && payload.results) {
-        payload.results.forEach(function(result) {
-          result.filterApplied = true;
-        });
-      }
       return createModel((payload), ConcreteModel, session);
     },
     delete: (payload, ConcreteModel, session) => {
@@ -51,12 +46,3 @@ export default class OpLogEntry extends CrudModel {
     }
   });
 }
-
-const deserialize = (entry) => {
-  const { start_date_ms, end_date_ms, ...data } = entry;
-  data.start_date_ms = parseInt(start_date_ms) || null;
-  data.end_date_ms = parseInt(end_date_ms) || null;
-
-  return data;
-};
-

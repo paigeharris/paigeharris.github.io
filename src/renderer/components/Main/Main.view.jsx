@@ -126,7 +126,20 @@ class Main extends Component {
           <img className={classes.dawg}
                src={'https://media.giphy.com/media/ayQ99hp01HFN6/source.gif'}
                alt={'Gif'}
+               onClick={this.props.sayHi}
           />
+
+          {/*nonesense below*/}
+          {this.props.his &&
+          this.props.his.map((hi, index) => (
+            <h1 onClick={this.props.sayHi}
+                key={index}
+            >
+              {hi}
+            </h1>
+          ))
+          }
+          {/* end of nonsense */}
         </Content>
         <Footer className={classes.footer}>
         </Footer>

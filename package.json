@@ -23,7 +23,8 @@
     "redux-orm": "^0.16.2",
     "redux-thunk": "^2.3.0",
     "typeface-roboto": "0.0.75",
-    "dotenv": "latest"
+    "dotenv": "latest",
+    "lodash": "latest"
   },
   "devDependencies": {
     "webpack": "4.42.0",
