@@ -130,15 +130,18 @@ class Main extends Component {
           />
 
           {/*nonesense below*/}
-          {this.props.his &&
-          this.props.his.map((hi, index) => (
-            <h1 onClick={this.props.sayHi}
-                key={index}
-            >
-              {hi}
-            </h1>
-          ))
-          }
+          <div>
+            {this.props.his &&
+            this.props.his.map((hi, index) => (
+              <p onClick={this.props.sayHi}
+                 key={index}
+                 style={{ display: "inline" }}
+              >
+                {`${hi} `}
+              </p>
+            ))
+            }
+          </div>
           {/* end of nonsense */}
         </Content>
         <Footer className={classes.footer}>
