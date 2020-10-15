@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = "com/circadence/mars/export/api/protos";
+package export;
+
+service Export {
+    rpc Export (ExportRequest) returns (stream ExportResponse);
+}
+
+message ExportRequest {
+    string acting_user_role = 1;
+}
+
+message ExportResponse {
+    string message = 1;
+}

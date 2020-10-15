@@ -8,14 +8,26 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "cuid": "^2.1.8",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-react": "^7.20.0",
     "mui-layout": "^1.2.9",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-redux": "^7.2.1",
     "react-scripts": "3.4.1",
-    "typeface-roboto": "0.0.75"
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-observable": "^1.2.0",
+    "redux-orm": "^0.16.2",
+    "redux-thunk": "^2.3.0",
+    "typeface-roboto": "0.0.75",
+    "dotenv": "latest"
+  },
+  "devDependencies": {
+    "webpack": "4.42.0",
+    "webpack-dev-server": "3.10.3"
   },
   "scripts": {
     "start": "react-scripts start",

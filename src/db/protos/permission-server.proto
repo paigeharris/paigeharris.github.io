@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option go_package = "com/circadence/mars/permission-server/api/protos";
+package permission_service;
+
+service PermissionService {
+    rpc CheckUserAuthorization (CheckAuthorizationParams) returns (Authorized);
+    rpc GetPermissionsForRole (UserRole) returns (Permissions);
+}
+
+message CheckAuthorizationParams {
+    string userRole = 1;
+    string actionCategory = 2;
+    string permission = 3;
+}
+
+message UserRole {
+    string userRole = 1;
+}
+
+message Authorized {
+    bool authorized = 1;
+}
+
+message Permissions {
+    map<string, Permission> permissions = 1;
+}
+
+message Permission {
+    map<string, bool> permission = 1;
+}
+
