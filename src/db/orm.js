@@ -1,5 +1,5 @@
 import { ORM } from 'redux-orm';
-import OpLogEntry from './models/OpLogEntry';
+import Project from './models/Project';
 import User from './models/User';
 
 const orm = new ORM({
@@ -9,7 +9,7 @@ const orm = new ORM({
 });
 
 export const models = [
-  OpLogEntry,
+  Project,
   User
 ];
 

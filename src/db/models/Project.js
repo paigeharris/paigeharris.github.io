@@ -5,32 +5,26 @@ import {
 } from "../../utils/crud/crud.utils";
 
 
-export default class OpLogEntry extends CrudModel {
+export default class Project extends CrudModel {
   static registered = false;
 
   static get fields() {
     return {
-      id: attr(),
-      start_date_ms: attr(),
-      operator: fk('User', 'operators'),
-      source_ip: attr(),
-      destination_ip: attr(),
-      ports: attr(),
-      apps: attr(),
-      files: attr(),
-      url: attr(),
-      result: attr(),
-      action: attr(),
-      end_date_ms: attr(),
-      comments: attr(),
-      tags: attr(),
-      type: attr(),
-      external_user_id: attr()
+      name: attr(),
+      roles: attr(),
+      img: attr(),
+      desc: attr(),
+      technologies: attr(),
+      live_link: attr(),
+      live_repo: attr(),
+      backend_link: attr(),
+      backend_repo: attr(),
+      sep_backend: attr()
     };
   }
 
   static get modelName() {
-    return 'OpLogEntry';
+    return 'Project';
   }
 
 
