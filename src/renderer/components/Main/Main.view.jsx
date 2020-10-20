@@ -25,6 +25,7 @@ import MainToolbar from "../MainToolbar";
 const styles = (theme) => {
   return {
     root: {
+      textAlign: 'center',
       overflow: 'hidden'
     },
     content: {
@@ -55,8 +56,9 @@ const styles = (theme) => {
       padding: 8
     },
     dawg: {
+      display: 'block',
       width: '90%',
-      placeItems: 'center'
+      margin: 'auto'
     },
     footer: {
       border: 'none'
