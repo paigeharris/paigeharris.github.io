@@ -121,7 +121,7 @@ class Main extends Component {
           <Typography className={classes.heard}
                       variant={'h4'}
           >
-            I heard you were looking for a developer (w.i.p) ..
+            I heard you were looking for a developer (W.I.P this site is currently under reconstruction 🐸🚯) ..
           </Typography>
           <img className={classes.dawg}
                src={'https://media.giphy.com/media/ayQ99hp01HFN6/source.gif'}
