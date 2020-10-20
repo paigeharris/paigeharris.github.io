@@ -55,7 +55,8 @@ const styles = (theme) => {
       padding: 8
     },
     dawg: {
-      width: '90%'
+      width: '90%',
+      placeItems: 'center'
     },
     footer: {
       border: 'none'
