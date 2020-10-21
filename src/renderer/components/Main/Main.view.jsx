@@ -23,14 +23,24 @@ import MainNav from "../MainNav";
 import MainToolbar from "../MainToolbar";
 
 const styles = (theme) => {
+  const sm = theme.breakpoints.only('sm');
+  const md = theme.breakpoints.only('md');
   return {
     root: {
       textAlign: 'center',
       overflow: 'hidden'
     },
     content: {
+      marginLeft: '175px !important',
       overflow: 'hidden',
-      width: 600
+      width: 600,
+
+      [sm]: {
+        marginLeft: '64px !important'
+      },
+      [md]: {
+        marginLeft: '175px !important'
+      }
     },
     header: {
       fontFamily: 'Marker Felt',
@@ -124,13 +134,19 @@ class Main extends Component {
           <Typography className={classes.heard}
                       variant={'h4'}
           >
-            I heard you were looking for a developer (W.I.P this site is currently under reconstruction 🐸🚯) ..
+            I heard you were looking for a developer..
           </Typography>
           <img className={classes.dawg}
                src={'https://media.giphy.com/media/ayQ99hp01HFN6/source.gif'}
                alt={'Gif'}
                onClick={this.props.sayHi}
           />
+
+          <Typography className={classes.heard}
+                      variant={'h4'}
+          >
+            (W.I.P) This site is currently under reconstruction 🐸🚯
+          </Typography>
 
           {/*nonesense below*/}
           <div>

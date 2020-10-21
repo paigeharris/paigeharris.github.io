@@ -16,12 +16,8 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch, ownProps) {
   return {
-    sayBye: () => {
-      console.log('bye bitch')
-      dispatch(sayBye)
-    },
+    sayBye: () => dispatch(sayBye()),
     sayHi: () => dispatch(sayHi())
-
   }
 }
 
