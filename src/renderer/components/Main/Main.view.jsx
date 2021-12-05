@@ -137,7 +137,7 @@ class Main extends Component {
             I heard you were looking for a developer..
           </Typography>
           <img className={classes.dawg}
-               src={'https://media.giphy.com/media/ayQ99hp01HFN6/source.gif'}
+               src={'images/actress-cut.png'}
                alt={'Gif'}
                onClick={this.props.sayHi}
           />
