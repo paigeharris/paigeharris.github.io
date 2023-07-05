@@ -1,3 +1,9 @@
+Old APP requires Node version 14.11.0 to run locally:
+### `brew install nvm`
+### `nvm install 14.11.0`
+### `npm install`
+### `npm install`
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
