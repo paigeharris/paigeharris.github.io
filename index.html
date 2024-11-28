@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>SAD Quiz Game</title>
+<style>body{margin:0;padding:0;font-family:Arial,sans-serif;background-color:#FFDDC1;display:flex;align-items:center;justify-content:center;height:100vh;overflow:hidden;transition:background-color 0.5s}canvas{position:absolute;top:0;left:0;z-index:-1}#quiz-container{z-index:10;background-color:rgba(255,255,255,0.8);padding:20px;border-radius:8px;box-shadow:0px 4px 6px rgba(0,0,0,.2);text-align:center;width:80%;max-width:600px}#quiz-container h2{margin-top:0}input[type=range]{width:100%;margin:10px 0}.section-title{font-size:1.2rem;margin:20px 0 10px;text-align:left}.results-text{margin:15px 0;text-align:left}.citation{font-size:.9rem;color:gray}</style>
+</head>
+<body>
+<canvas id="pixel-art"></canvas>
+<div id="quiz-container">
+<h2>SAD Mental Health Quiz</h2>
+<div class="section-title">Seasonal Depression (Max Score: 30)</div>
+<div><label for="sad-slider-1">Do you feel more lethargic during winter months?</label>
+<input type="range" id="sad-slider-1" min="0" max="10" value="0"></div>
+<div><label for="sad-slider-2">Do you experience changes in your sleep patterns during winter?</label>
+<input type="range" id="sad-slider-2" min="0" max="10" value="0"></div>
+<div><label for="sad-slider-3">Do you feel a significant drop in mood or energy during specific seasons?</label>
+<input type="range" id="sad-slider-3" min="0" max="10" value="0"></div>
+<div class="section-title">Seasonal Anxiety (Max Score: 25)</div>
+<div><label for="anxiety-slider-1">Do you feel anxious about upcoming seasonal changes?</label>
+<input type="range" id="anxiety-slider-1" min="0" max="10" value="0"></div>
+<div><label for="anxiety-slider-2">Do you worry about being less productive during specific seasons?</label>
+<input type="range" id="anxiety-slider-2" min="0" max="10" value="0"></div>
+<div><label for="anxiety-slider-3">Do you experience physical symptoms of anxiety (e.g., sweating, trembling)?</label>
+<input type="range" id="anxiety-slider-3" min="0" max="5" value="0"></div>
+<div id="results-container"><h2>Your Results</h2>
+<div class="results-text" id="sad-results"></div><div class="results-text" id="anxiety-results"></div></div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded",()=>{const canvas=document.getElementById("pixel-art"),ctx=canvas.getContext("2d");canvas.width=window.innerWidth;canvas.height=window.innerHeight;const sadSliders=[document.getElementById("sad-slider-1"),document.getElementById("sad-slider-2"),document.getElementById("sad-slider-3")],anxietySliders=[document.getElementById("anxiety-slider-1"),document.getElementById("anxiety-slider-2"),document.getElementById("anxiety-slider-3")],sadResults=document.getElementById("sad-results"),anxietyResults=document.getElementById("anxiety-results"),elves=[];function calculateTotal(sliders){return sliders.reduce((t,s)=>t+parseInt(s.value),0)}function updateResults(sadScore,anxietyScore){if(sadScore<=10)sadResults.innerHTML="SAD Score: "+sadScore+"/30<br>Mild or no symptoms detected.<br><span class='citation'>Citation: American Psychiatric Association. (2013).</span>";else if(sadScore<=20)sadResults.innerHTML="SAD Score: "+sadScore+"/30<br>Moderate symptoms detected.<br><span class='citation'>Citation: American Psychiatric Association. (2013).</span>";else sadResults.innerHTML="SAD Score: "+sadScore+"/30<br>Severe symptoms detected.<br><span class='citation'>Citation: American Psychiatric Association. (2013).</span>";if(anxietyScore<=10)anxietyResults.innerHTML="Anxiety Score: "+anxietyScore+"/25<br>Mild or no symptoms detected.<br><span class='citation'>Citation: National Institute of Mental Health (2021).</span>";else if(anxietyScore<=20)anxietyResults.innerHTML="Anxiety Score: "+anxietyScore+"/25<br>Moderate symptoms detected.<br><span class='citation'>Citation: National Institute of Mental Health (2021).</span>";else anxietyResults.innerHTML="Anxiety Score: "+anxietyScore+"/25<br>Severe symptoms detected.<br><span class='citation'>Citation: National Institute of Mental Health (2021).</span>";}class Elf{constructor(ctx,x,y){this.ctx=ctx;this.x=x;this.y=y;this.size=40;this.speed=Math.random()*1.5+.5;this.direction=Math.random()*Math.PI*2;this.waddleOffset=0}update(w,h){if(Math.random()<.01)this.direction+=(Math.random()-.5)*Math.PI/4;this.x+=Math.cos(this.direction)*this.speed;this.y+=Math.sin(this.direction)*this.speed;if(this.x<this.size||this.x>w-this.size)this.direction=Math.PI-this.direction;if(this.y<this.size||this.y>h-this.size)this.direction=-this.direction;this.waddleOffset=Math.sin(Date.now()/100)*5}draw(){this.ctx.fillStyle="green";this.ctx.fillRect(this.x-this.size/4,this.y+this.waddleOffset,this.size/2,this.size);this.ctx.fillStyle="pink";this.ctx.beginPath();this.ctx.arc(this.x,this.y+this.waddleOffset-this.size/2,this.size/4,0,2*Math.PI);this.ctx.fill();this.ctx.fillStyle="red";this.ctx.beginPath();this.ctx.moveTo(this.x,this.y+this.waddleOffset-this.size);this.ctx.lineTo(this.x-this.size/4,this.y+this.waddleOffset-this.size/2);this.ctx.lineTo(this.x+this.size/4,this.y+this.waddleOffset-this.size/2);this.ctx.closePath();this.ctx.fill();this.ctx.fillStyle="white";this.ctx.beginPath();this.ctx.arc(this.x,this.y+this.waddleOffset-this.size,this.size/10,0,2*Math.PI);this.ctx.fill()}}function drawScenery(sadScore){const skyColor=Math.max(255-(sadScore/30)*255,50),grassColor=Math.max(150-(sadScore/30)*150,50);ctx.fillStyle=`rgb(255,${skyColor},50)`;ctx.fillRect(0,0,canvas.width,canvas.height/2);ctx.fillStyle=`rgb(0,${grassColor},0)`;ctx.fillRect(0,canvas.height/2,canvas.width,canvas.height/2);document.body.style.backgroundColor=`rgb(${255-sadScore*8},${200-sadScore*6},${sadScore*8})`}function initElves(anxietyScore){elves.length=0;for(let i=0;i<Math.min(5+anxietyScore,25);i++){const x=Math.random()*canvas.width,y=Math.random()*canvas.height;elves.push(new Elf(ctx,x,y))}}function updateScores(){const sadScore=calculateTotal(sadSliders),anxietyScore=calculateTotal(anxietySliders);updateResults(sadScore,anxietyScore);drawScenery(sadScore);initElves(anxietyScore)}sadSliders.forEach(s=>s.addEventListener("input",updateScores));anxietySliders.forEach(s=>s.addEventListener("input",updateScores));function animate(){ctx.clearRect(0,0,canvas.width,canvas.height);elves.forEach(e=>{e.update(canvas.width,canvas.height);e.draw()});requestAnimationFrame(animate)}updateScores();animate()});
+</script>
+</body>
+</html>
